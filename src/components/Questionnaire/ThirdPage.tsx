@@ -313,7 +313,7 @@ const StyledTHirdPage = () => {
   const handleSubmitForm = async (formData: Partial<FormData>) => {
     try {
       const response = await fetch(
-        "https://api.sbercloud.ru/content/v1/bootcamp/fronten",
+        "https://api.sbercloud.ru/content/v1/bootcamp/frontend",
         {
           method: "POST",
           body: JSON.stringify(formData),
