@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import StyledMain from "./components/StartPage/Main";
+import { Routes, Route } from "react-router-dom";
+import StartPage from "./components/StartPage/StartPage";
+import StyledFirstPage from "./components/Questionnaire/FirstPage";
+import StyledTwoPage from "./components/Questionnaire/TwoPage";
+import StyledThirdPage from "./components/Questionnaire/ThirdPage";
+import { useSelector } from "react-redux";
+import { AppState } from "./reducer/store";
 
 function App() {
+  const phone = useSelector((state) => (state as AppState).phone);
+  const email = useSelector((state) => (state as AppState).email);
+  const nickname = useSelector((state) => (state as AppState).nickname);
+  const name = useSelector((state) => (state as AppState).name);
+  const surname = useSelector((state) => (state as AppState).surname);
+  const sex = useSelector((state) => (state as AppState).sex);
+  const about = useSelector((state) => (state as AppState).about);
+
+  console.log(phone, email, nickname, name, surname, sex, about);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<StartPage />}></Route>
+        <Route path="/first_page" element={<StyledFirstPage />}></Route>
+        <Route path="/second_page" element={<StyledTwoPage />}></Route>
+        <Route path="/third_page" element={<StyledThirdPage />}></Route>
+      </Routes>
+    </>
   );
 }
 
