@@ -28,6 +28,14 @@ const Main = styled.div`
   background: white;
   margin: 0 auto;
   border-radius: 12px 12px 0px 0px;
+
+  @media (max-width: 768px) {
+    width: 700px;
+    height: 400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 12px 12px 0px 0px;
+  }
 `;
 
 const GeneralContainer = styled.div`
@@ -35,12 +43,17 @@ const GeneralContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 680px;
+  width: 610px;
 `;
 
 const StepContainer = styled.div`
   margin: 3rem auto;
   width: 680px;
+
+  @media (max-width: 768px) {
+    margin: 3rem 3rem;
+    width: 600px;
+  }
 `;
 
 const StepLine = styled.div`
@@ -112,6 +125,11 @@ const InputContainers = styled.div`
   & > div > select {
     background: white;
   }
+
+  @media (max-width: 768px) {
+    width: 610px;
+    margin: 0 auto;
+  }
 `;
 
 const InputContainer = styled.div`
@@ -136,6 +154,11 @@ const NumberInput = styled.textarea`
   width: 680px;
   height: 84px;
   font-size: 16px;
+
+  @media (max-width: 768px) {
+    width: 610px;
+    margin: 0 auto;
+  }
 `;
 
 const Counter = styled.span`
@@ -157,13 +180,15 @@ const ButtonContainers = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
 `;
 
 const ButtonSubmitBack = styled.button`
   width: 93px;
   height: 54px;
-  left: 24px;
-  top: 369px;
 
   background: white;
   color: #5558fa;
@@ -180,8 +205,6 @@ const ButtonSubmitBack = styled.button`
 const ButtonSubmitNext = styled.button`
   width: 93px;
   height: 54px;
-  left: 24px;
-  top: 369px;
 
   background: #5558fa;
   color: white;
@@ -290,7 +313,7 @@ const StyledTHirdPage = () => {
   const handleSubmitForm = async (formData: Partial<FormData>) => {
     try {
       const response = await fetch(
-        "https://api.sbercloud.ru/content/v1/bootcamp/frontend",
+        "https://api.sbercloud.ru/content/v1/bootcamp/fronten",
         {
           method: "POST",
           body: JSON.stringify(formData),

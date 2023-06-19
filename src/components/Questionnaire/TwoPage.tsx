@@ -45,6 +45,14 @@ const Main = styled.div`
   background: white;
   margin: 0 auto;
   border-radius: 12px 12px 0px 0px;
+
+  @media (max-width: 768px) {
+    width: 700px;
+    height: 780px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 12px 12px 0px 0px;
+  }
 `;
 
 const GeneralContainer = styled.div`
@@ -53,11 +61,20 @@ const GeneralContainer = styled.div`
   flex-direction: column;
   gap: 12px;
   width: 680px;
+
+  @media (max-width: 768px) {
+    width: 610px;
+  }
 `;
 
 const StepContainer = styled.div`
   margin: 3rem auto;
   width: 680px;
+
+  @media (max-width: 768px) {
+    margin: 3rem 3rem;
+    width: 600px;
+  }
 `;
 
 const StepLine = styled.div`

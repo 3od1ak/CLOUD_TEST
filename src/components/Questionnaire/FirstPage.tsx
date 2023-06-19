@@ -50,11 +50,24 @@ const Main = styled.div`
   background: white;
   margin: 0 auto;
   border-radius: 12px 12px 0px 0px;
+
+  @media (max-width: 768px) {
+    width: 700px;
+    height: 700px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 12px 12px 0px 0px;
+  }
 `;
 
 const StepContainer = styled.div`
   margin: 3rem auto;
   width: 680px;
+
+  @media (max-width: 768px) {
+    margin: 3rem 3rem;
+    width: 600px;
+  }
 `;
 
 const StepLine = styled.div`
@@ -105,6 +118,10 @@ const InputContainers = styled.div`
   & > div > select {
     background: white;
   }
+
+  @media (max-width: 768px) {
+    width: 610px;
+  }
 `;
 
 const StepNumber = styled.span<{ selected?: boolean }>`
@@ -127,7 +144,7 @@ const NumberText = styled.span`
 `;
 
 const NumberInput = styled.input`
-  background: rgba(0, 0, 0, 0.04);
+  background: white;
   border: 1px solid rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   padding: 12px;
@@ -295,6 +312,10 @@ const ButtonContainers = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
 `;
 
 const ButtonSubmitBack = styled.button`
