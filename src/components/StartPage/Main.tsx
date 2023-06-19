@@ -125,9 +125,6 @@ function StyledMain() {
     const phoneNumber = values.phoneNumber;
     const email = values.email;
 
-    console.log("Phone Number:", phoneNumber);
-    console.log("Email:", email);
-
     // Dispatch actions to update the Redux store
     dispatch<SetPhoneNumberAction>({
       type: ActionTypes.SET_PHONE_NUMBER,

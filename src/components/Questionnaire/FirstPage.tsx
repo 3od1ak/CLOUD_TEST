@@ -408,8 +408,6 @@ const StyledFirstPage = () => {
       return; // Поле NumberInput не прошло валидацию или осталось пустым
     }
 
-    console.log(values);
-
     // Access form field values from formik object
     const nickname = values.nickname;
     const name = values.name;
@@ -436,8 +434,6 @@ const StyledFirstPage = () => {
       type: ActionTypes.SET_SEX,
       payload: sex,
     });
-
-    console.log(nickname, name, surname, sex);
 
     navigate("/second_page");
   };

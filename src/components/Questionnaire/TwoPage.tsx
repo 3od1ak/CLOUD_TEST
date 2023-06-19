@@ -400,8 +400,6 @@ const StyledTwoPage = () => {
     });
     setRadios(updatedRadios);
 
-    console.log(updatedRadios);
-
     dispatch<SetInputsAction>({
       type: ActionTypes.SET_INPUTS,
       payload: inputs,

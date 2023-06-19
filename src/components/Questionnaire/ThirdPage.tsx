@@ -347,8 +347,6 @@ const StyledTHirdPage = () => {
       return; // Поле NumberInput не прошло валидацию или осталось пустым
     }
 
-    console.log(values);
-
     // Access form field values from formik object
     const about = values.about;
 
@@ -370,8 +368,6 @@ const StyledTHirdPage = () => {
       checkboxes,
       inputs,
     };
-
-    console.log(formData);
 
     handleSubmitForm(formData);
   };
