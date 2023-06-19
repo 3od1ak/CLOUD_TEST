@@ -10,9 +10,9 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<StartPage />}></Route>
-        <Route path="/first_page" element={<StyledFirstPage />}></Route>
-        <Route path="/second_page" element={<StyledTwoPage />}></Route>
-        <Route path="/third_page" element={<StyledThirdPage />}></Route>
+        <Route path="/create/first_page" element={<StyledFirstPage />}></Route>
+        <Route path="/create/second_page" element={<StyledTwoPage />}></Route>
+        <Route path="/create/third_page" element={<StyledThirdPage />}></Route>
       </Routes>
     </>
   );

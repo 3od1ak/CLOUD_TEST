@@ -121,11 +121,9 @@ function StyledMain() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Access form field values from formik object
     const phoneNumber = values.phoneNumber;
     const email = values.email;
 
-    // Dispatch actions to update the Redux store
     dispatch<SetPhoneNumberAction>({
       type: ActionTypes.SET_PHONE_NUMBER,
       payload: phoneNumber,
@@ -136,8 +134,7 @@ function StyledMain() {
       payload: email,
     });
 
-    // Navigate to the Second Page
-    navigate("/first_page");
+    navigate("/create/first_page");
   };
 
   return (

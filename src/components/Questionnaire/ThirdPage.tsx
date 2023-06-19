@@ -43,7 +43,11 @@ const GeneralContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 610px;
+  width: 680px;
+
+  @media (max-width: 768px) {
+    width: 610px;
+  }
 `;
 
 const StepContainer = styled.div`
@@ -239,11 +243,11 @@ const StyledTHirdPage = () => {
 
   const [radios, setRadios] = useState(["radio1", "radio2", "radio3"]);
   const [isModalOpen, setModalOpen] = useState(false);
-  const [modalType, setModalType] = useState<"success" | "error">("success"); // Fix the type of modalType
+  const [modalType, setModalType] = useState<"success" | "error">("success");
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value;
-    const formattedText = text.replace(/\s/g, ""); // Удаление пробелов
+    const formattedText = text.replace(/\s/g, "");
     formik.handleChange(e);
     setInput(formattedText);
   };
@@ -270,7 +274,7 @@ const StyledTHirdPage = () => {
       checkbox1: false,
       checkbox2: false,
       checkbox3: false,
-      radio: "radio1", // Значение по умолчанию для радиокнопок
+      radio: "radio1",
     },
     validationSchema: numberInputSchema,
     onSubmit: (values) => {
@@ -292,9 +296,7 @@ const StyledTHirdPage = () => {
     selectedRadioButton,
     checkboxes,
     inputs,
-  } = useSelector(
-    (state) => state as AppState // Update "state" with the correct slice of your Redux store
-  );
+  } = useSelector((state) => state as AppState);
 
   interface FormData {
     nickname: string;
@@ -344,13 +346,11 @@ const StyledTHirdPage = () => {
     event.preventDefault();
 
     if (!formik.isValid || !formik.values.about.trim()) {
-      return; // Поле NumberInput не прошло валидацию или осталось пустым
+      return;
     }
 
-    // Access form field values from formik object
     const about = values.about;
 
-    // Dispatch actions to update the Redux store
     dispatch<SetAboutAction>({
       type: ActionTypes.SET_ABOUT,
       payload: about,

@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import sourceIcon from "../../assets/img/arrow.svg"; // Путь к иконке источника
+import sourceIcon from "../../assets/img/arrow.svg";
 import {
   ActionTypes,
   SetNameAction,
@@ -232,7 +232,7 @@ interface CustomSexSelectProps {
   value: "man" | "woman" | "not-selected";
   onChange: (e: React.ChangeEvent<any>) => void;
   onBlur: (e: any) => void;
-  onSelect: (value: "man" | "woman") => void; // Add the 'onSelect' prop
+  onSelect: (value: "man" | "woman") => void;
 }
 
 const CustomSexSelect: React.FC<CustomSexSelectProps> = ({
@@ -241,7 +241,7 @@ const CustomSexSelect: React.FC<CustomSexSelectProps> = ({
   value,
   onChange,
   onBlur,
-  onSelect, // Add the 'onSelect' prop
+  onSelect,
 }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
@@ -250,7 +250,7 @@ const CustomSexSelect: React.FC<CustomSexSelectProps> = ({
   const handleSelect = (value: "man" | "woman") => {
     setSelectedValue(value);
     setIsOpen(false);
-    onSelect(value); // Call the 'onSelect' prop with the selected value
+    onSelect(value);
   };
 
   const handleToggle = () => {
@@ -381,7 +381,7 @@ const StyledFirstPage = () => {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      navigate("/second_page"); // Переход на страницу /start после успешной валидации формы
+      navigate("/create/second_page");
     },
   });
 
@@ -390,8 +390,8 @@ const StyledFirstPage = () => {
   };
 
   const { handleSubmit, handleChange, values } = formik;
-  const errors = formik.errors; // Добавьте это
-  const touched = formik.touched; // Добавьте это
+  const errors = formik.errors;
+  const touched = formik.touched;
 
   const isValid =
     Object.keys(errors).length === 0 && Object.keys(touched).length !== 0;
@@ -405,16 +405,14 @@ const StyledFirstPage = () => {
       !formik.values.surname ||
       selectedSex === "not-selected"
     ) {
-      return; // Поле NumberInput не прошло валидацию или осталось пустым
+      return;
     }
 
-    // Access form field values from formik object
     const nickname = values.nickname;
     const name = values.name;
     const surname = values.surname;
     const sex = selectedSex;
 
-    // Dispatch actions to update the Redux store
     dispatch<SetNicknameAction>({
       type: ActionTypes.SET_NICKNAME,
       payload: nickname,
@@ -435,7 +433,7 @@ const StyledFirstPage = () => {
       payload: sex,
     });
 
-    navigate("/second_page");
+    navigate("/create/second_page");
   };
 
   return (
@@ -507,7 +505,7 @@ const StyledFirstPage = () => {
               value={values.sex}
               onChange={handleChange}
               onBlur={formik.handleBlur}
-              onSelect={setSelectedSex} // Pass the 'setSelectedSex' function as the 'onSelect' prop
+              onSelect={setSelectedSex}
             />
             {errors.sex && touched.sex && (
               <ErrorMessage>{errors.sex}</ErrorMessage>

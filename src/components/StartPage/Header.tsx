@@ -75,10 +75,10 @@ function StyledHeader() {
     <Header>
       <AvatarWithNearName>
         <Avatar>
-          <TextAvatar>АИ</TextAvatar>
+          <TextAvatar>АШ</TextAvatar>
         </Avatar>
         <NameWithSources>
-          <TextNearAvatar>Иван Иванов</TextNearAvatar>
+          <TextNearAvatar>Александр Шорохов</TextNearAvatar>
           <Sources>
             {sourcesData.map((source, index) => (
               <SourceItem key={index}>

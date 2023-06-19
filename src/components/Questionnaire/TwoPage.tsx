@@ -355,16 +355,16 @@ const StyledTwoPage = () => {
       checkbox1: false,
       checkbox2: false,
       checkbox3: false,
-      radio: "", // Значение по умолчанию для радиокнопок
+      radio: "",
     },
-    validationSchema: validationSchema, // Добавьте схему валидации
+    validationSchema: validationSchema,
     onSubmit: (values) => {
-      navigate("/third_page");
+      navigate("/create/third_page");
     },
   });
 
   const handleBack = () => {
-    navigate("/first_page");
+    navigate("/create/first_page");
   };
 
   interface FormValues {
@@ -382,7 +382,6 @@ const StyledTwoPage = () => {
 
     const selectedFields = [...selectedCheckboxes];
 
-    // Add only the selected checkboxes to the checkboxes state
     const updatedCheckboxes = checkboxes.map((isChecked, index) => {
       if (selectedCheckboxes.includes(index)) {
         return true;
@@ -391,7 +390,6 @@ const StyledTwoPage = () => {
     });
     setCheckboxes(updatedCheckboxes);
 
-    // Add only one active (selected) radio button to the radios state
     const updatedRadios = radios.map((radio, index) => {
       if (index === selectedRadioIndex) {
         return radio;
@@ -415,7 +413,7 @@ const StyledTwoPage = () => {
       payload: updatedRadios[updatedRadios.findIndex((radio) => radio !== "")],
     });
 
-    navigate("/third_page");
+    navigate("/create/third_page");
   };
 
   const { handleSubmit, handleChange, values, errors, touched } = formik;

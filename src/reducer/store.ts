@@ -1,6 +1,5 @@
 import { createStore } from "redux";
 
-// Define the initial state shape
 export interface AppState {
   phone: string;
   email: string;
@@ -9,12 +8,11 @@ export interface AppState {
   surname: string;
   sex: "not-selected" | "man" | "woman";
   about: string;
-  inputs: string[]; // Array of inputs
-  checkboxes: boolean[]; // Array of checkboxes
-  selectedRadioButton: string; // Selected radiobutton
+  inputs: string[];
+  checkboxes: boolean[];
+  selectedRadioButton: string;
 }
 
-// Define the actions
 export enum ActionTypes {
   SET_PHONE_NUMBER = "SET_PHONE_NUMBER",
   SET_EMAIL = "SET_EMAIL",
@@ -90,7 +88,6 @@ type AppAction =
   | SetCheckboxesAction
   | SetSelectedRadioButtonAction;
 
-// Define the reducer
 const initialState: AppState = {
   phone: "",
   email: "",
@@ -135,7 +132,6 @@ export const appReducer = (
   }
 };
 
-// Create the Redux store
 const store = createStore(appReducer);
 
 export default store;
