@@ -84,7 +84,7 @@ function StyledHeader() {
               <SourceItem key={index}>
                 <SourceIcon src={sourceIcon} alt="Source Icon" />
                 {source === "Telegram" ? (
-                  <SourceLink href="https://t.me/3od1ak">Telegram</SourceLink>
+                  <SourceLink href="https://t.me/zod1ac">Telegram</SourceLink>
                 ) : source === "GitHub" ? (
                   <SourceLink href="https://github.com/3od1ak">
                     GitHub
